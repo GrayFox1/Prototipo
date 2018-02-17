@@ -21,5 +21,11 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func conhecerButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+    }
+    
 }
 
