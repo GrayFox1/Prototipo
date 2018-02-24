@@ -20,11 +20,6 @@ class RegisterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         
@@ -56,6 +51,11 @@ class RegisterViewController: UIViewController {
         
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.async {
+            self.emailTextInput.resignFirstResponder()
+            self.senhaTextInput.resignFirstResponder()
+        }
     }
     
     /*

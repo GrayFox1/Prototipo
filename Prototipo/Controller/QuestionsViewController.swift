@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class QuestionsViewController: UIViewController {
     
@@ -27,10 +29,12 @@ class QuestionsViewController: UIViewController {
         nextQuestion()
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToProdutosView"){
+            let destinationVC = segue.destination as! ProdutosViewController
+            destinationVC.newClient = self.newClient
+        }
     }
     
     func nextQuestion (){
@@ -40,8 +44,32 @@ class QuestionsViewController: UIViewController {
             updateView()
         }
         else{
-            //Salvar dados no BD
-            // Go Next View
+            writeBD()
+            performSegue(withIdentifier: "goToProdutosView", sender: self)
+        }
+    }
+    
+    func writeBD(){
+        
+        let messagesBD = Database.database().reference().child("Clientes")
+        let clientData = ["Sender" : Auth.auth().currentUser?.email, "Name" : newClient.name, "Age" : String(newClient.age), "QtdFilhos" : String(newClient.qtdFilhos)]
+        
+        SVProgressHUD.show()
+        
+        messagesBD.childByAutoId().setValue(clientData) {
+            (error, reference) in
+            
+            if(error != nil){
+                //SVProgressHUD.dismiss()
+                print(error!)
+            }
+            else{
+                SVProgressHUD.dismiss()
+                print("New client data saved successfully!")
+                self.performSegue(withIdentifier: "goToProdutosView", sender: self)
+        
+            }
+            
         }
         
     }
