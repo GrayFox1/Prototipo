@@ -12,15 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationController?.navigationBar.barTintColor = UIColor.lightGray
     }
 
-
-    @IBAction func conhecerButtonPressed(_ sender: UIButton) {
-    }
-    
-    @IBAction func loginButtonPressed(_ sender: UIButton) {
-    }
-    
 }
 

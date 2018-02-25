@@ -11,14 +11,18 @@ import Firebase
 
 class ProdutosViewController: UITableViewController {
     
-    let produtosArray = ["Produto A", "Produto B", "Produto C"]
+    let produtosArray = ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E", "Produto F"]
     var newClient = Client()
     
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messageLabel.text = "\(newClient.name), organizamos produtos personalizados para você!"
+        
+        self.navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.barTintColor = UIColor.blue
+    
+        messageLabel.text = "\(newClient.nome), organizamos produtos personalizados para você! 😉"
      
     }
     
@@ -56,22 +60,13 @@ class ProdutosViewController: UITableViewController {
         
         do{
             try Auth.auth().signOut()
+            navigationController?.navigationBar.barTintColor = UIColor.lightGray
             navigationController?.popToRootViewController(animated: true)
         }
         catch{
             print("Error signing out")
         }
+        
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

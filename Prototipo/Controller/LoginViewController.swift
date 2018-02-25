@@ -57,10 +57,6 @@ class LoginViewController: UIViewController {
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
         
-        DispatchQueue.main.async {
-            self.emailTextInput.resignFirstResponder()
-            self.senhaTextInput.resignFirstResponder()
-        }
     }
     
    

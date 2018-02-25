@@ -10,8 +10,9 @@ import Foundation
 
 class Client {
     
-    var name : String = ""
-    var age : Int = -1
-    var qtdFilhos : Int = -1
-
+    var nome : String = ""
+    var idade : Int = -1
+    var praticaEsporte : String = ""
+    var fumante : String = ""
+    
 }

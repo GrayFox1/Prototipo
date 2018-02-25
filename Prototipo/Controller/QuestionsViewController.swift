@@ -13,7 +13,7 @@ import SVProgressHUD
 class QuestionsViewController: UIViewController {
     
     var questionNum : Int = 0
-    let questionsArray : [String] = ["Qual é o seu nome?", "Quantos anos você tem?", "Quantos filhos?"]
+    let questionsArray : [String] = ["Qual é o seu nome?", "Quantos anos você tem?", "Você pratica esportes?", "Você fuma?"]
     let newClient = Client()
     
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -21,20 +21,25 @@ class QuestionsViewController: UIViewController {
     @IBOutlet var progressBar: UIView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerTextInput: UITextField!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
         welcomeLabel.isHidden = true
+        button1.isHidden = true
+        button2.isHidden = true
         nextQuestion()
 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "goToProdutosView"){
-            let destinationVC = segue.destination as! ProdutosViewController
-            destinationVC.newClient = self.newClient
-        }
+        let destinationVC = segue.destination as! ProdutosViewController
+        destinationVC.newClient = self.newClient
+        
     }
     
     func nextQuestion (){
@@ -44,15 +49,18 @@ class QuestionsViewController: UIViewController {
             updateView()
         }
         else{
-            writeBD()
-            performSegue(withIdentifier: "goToProdutosView", sender: self)
+            if(Auth.auth().currentUser?.email != nil){ // Possui login
+                writeBD()
+            }
+            else{
+                performSegue(withIdentifier: "goToProdutosView", sender: self)
+            }
         }
     }
     
     func writeBD(){
-        
         let messagesBD = Database.database().reference().child("Clientes")
-        let clientData = ["Sender" : Auth.auth().currentUser?.email, "Name" : newClient.name, "Age" : String(newClient.age), "QtdFilhos" : String(newClient.qtdFilhos)]
+        let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient.nome, "Idade" : String(newClient.idade), "PraticaEsporte" : newClient.praticaEsporte , "Fumante" : newClient.fumante ]
         
         SVProgressHUD.show()
         
@@ -60,7 +68,6 @@ class QuestionsViewController: UIViewController {
             (error, reference) in
             
             if(error != nil){
-                //SVProgressHUD.dismiss()
                 print(error!)
             }
             else{
@@ -77,11 +84,17 @@ class QuestionsViewController: UIViewController {
     func updateView (){
         answerTextInput.text = ""
         progressLabel.text = "\(questionNum + 1) / \(questionsArray.count)"
-        progressBar.frame.size.width = (view.frame.size.width / 3 ) * CGFloat(questionNum + 1)
+        progressBar.frame.size.width = (view.frame.size.width / 4 ) * CGFloat(questionNum + 1)
         
         if(questionNum == 1){
-            welcomeLabel.text = "Seja bem-vindo \(newClient.name)!😃"
+            welcomeLabel.text = "Seja bem-vindo \(newClient.nome)!😃"
             welcomeLabel.isHidden = false
+        }
+        else if(questionNum == 2){
+            button1.isHidden = false
+            button2.isHidden = false
+            sendButton.isHidden = true
+            answerTextInput.isHidden = true
         }
     }
     
@@ -93,11 +106,9 @@ class QuestionsViewController: UIViewController {
             switch(questionNum){
                 
             case 0:
-                newClient.name = answerTextInput.text!
+                newClient.nome = answerTextInput.text!
             case 1:
-                newClient.age = Int(answerTextInput.text!)!
-            case 2:
-                newClient.qtdFilhos = Int(answerTextInput.text!)!
+                newClient.idade = Int(answerTextInput.text!)!
             default:
                 print("QuestionNum Invalido")
             
@@ -141,5 +152,24 @@ class QuestionsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func answerButtonClicked(_ sender: UIButton) {
+        
+        if(questionNum == 2 && sender.tag == 1){
+            newClient.praticaEsporte = "Sim"
+        }
+        else if(questionNum == 2 && sender.tag == 2){
+            newClient.praticaEsporte = "Não"
+        }
+        else if(questionNum == 3 && sender.tag == 1){
+            newClient.fumante = "Sim"
+        }
+        else if(questionNum == 3 && sender.tag == 2){
+            newClient.fumante = "Não"
+        }
+        
+        questionNum += 1
+        nextQuestion()
+        
+    }
 
 }
