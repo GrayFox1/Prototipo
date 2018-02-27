@@ -17,8 +17,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let colorHex = FlatWhite().hexValue()
-        updateNavBar(withHexCode: colorHex)
+        updateNavBar(withHexCode: FlatWhite().hexValue())
     }
     
     func updateNavBar(withHexCode colorHexCode : String){

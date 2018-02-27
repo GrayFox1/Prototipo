@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 class ProdutosViewController: UITableViewController {
     
@@ -18,13 +19,26 @@ class ProdutosViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = 80.0
         self.navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.barTintColor = UIColor.blue
-    
-        messageLabel.text = "\(newClient.nome), organizamos produtos personalizados para você! 😉"
+        updateNavBar(withHexCode: FlatSkyBlue().hexValue())
+        //navigationController?.navigationBar.barTintColor = FlatSkyBlue()
+        messageLabel.text = "\(newClient.nome), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessar :)"
      
     }
+    
+    func updateNavBar(withHexCode colorHexCode : String){
+        
+        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
+        guard let navBarColor = UIColor(hexString : colorHexCode) else {fatalError()}
+        
+        navBar.barTintColor = navBarColor
+        navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
+        
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)]
+        
+    }
+
     
     // Métodos Table View Data Source
     
@@ -68,5 +82,6 @@ class ProdutosViewController: UITableViewController {
         }
         
     }
+    
     
 }
