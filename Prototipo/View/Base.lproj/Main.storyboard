@@ -63,7 +63,7 @@
                                     <color key="titleShadowColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8k9-Lp-fg3" kind="show" identifier="goToQuestionsView" id="bgH-3y-a8C"/>
+                                    <segue destination="obt-wR-8BQ" kind="show" identifier="goToInfoView" id="TYJ-AQ-vI3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dM-XQ-I9x">
@@ -171,6 +171,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caR-7Q-v2a">
                                 <rect key="frame" x="181" y="264" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Não"/>
                                 <connections>
@@ -180,6 +181,7 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-qY-xM6">
                                 <rect key="frame" x="77" y="264" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sim"/>
                                 <connections>
@@ -199,12 +201,12 @@
                         <outlet property="questionLabel" destination="pxf-an-BBb" id="myA-aP-LDB"/>
                         <outlet property="sendButton" destination="eYi-HP-IOm" id="oGw-Da-j1w"/>
                         <outlet property="welcomeLabel" destination="Vre-zc-7u6" id="ZIP-cd-FOt"/>
-                        <segue destination="iye-Z5-NxK" kind="show" identifier="goToProdutosView" id="jcx-mp-XAf"/>
+                        <segue destination="iye-Z5-NxK" kind="show" identifier="goToProdutosView" id="1sp-vM-jRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Z-Tx-1G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="969.26536731634189"/>
+            <point key="canvasLocation" x="2295" y="967"/>
         </scene>
         <!--Easynsurance-->
         <scene sceneID="7fd-TD-PcV">
@@ -231,6 +233,7 @@ Selecione os produtos que te interessar :)</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -248,16 +251,38 @@ Selecione os produtos que te interessar :)</string>
                     </navigationItem>
                     <connections>
                         <outlet property="messageLabel" destination="U3H-6U-zpz" id="SfX-a2-iWY"/>
+                        <segue destination="ltK-3H-mNZ" kind="show" id="O8e-4c-txZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5U-sf-O6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="969"/>
+            <point key="canvasLocation" x="3188" y="967"/>
         </scene>
-        <!--Details View Controller-->
+        <!--View Controller-->
+        <scene sceneID="SCa-Nw-tdT">
+            <objects>
+                <viewController id="ltK-3H-mNZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rDE-pr-ppM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background3" translatesAutoresizingMaskIntoConstraints="NO" id="wPb-Hy-pv7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HvQ-gw-fiu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tib-XJ-MtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4101.6000000000004" y="966.56671664167925"/>
+        </scene>
+        <!--Mongeral Aegon-->
         <scene sceneID="dzY-Db-Twb">
             <objects>
-                <viewController id="obt-wR-8BQ" customClass="DetailsViewController" customModule="Prototipo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mongeral Aegon" id="obt-wR-8BQ" customClass="InfoViewController" customModule="Prototipo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w2V-h7-BAU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,26 +297,29 @@ Selecione os produtos que te interessar :)</string>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uY8-aD-ilT">
-                                <rect key="frame" x="67" y="308" width="240" height="135"/>
+                                <rect key="frame" x="69" y="271" width="236" height="195.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <string key="text">Rodrigo Prevot
+                                <string key="text">Responda nosso questionário para ganhar pontos! 😃
+Os pontos concedem descontos na mensalidade do seu contrato.
 
-Tel: 21 3461 9135 
-cel: 21 96413 5156
-
-rprevot@mongeralaegon.com.br</string>
+- Cada pergunta vale 10 pontos
+- Cada 5 perguntas respondidas vale 20 pontos
+- Responder todas as perguntas vale 50 pontos</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Easynsurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGe-ii-FWY">
-                                <rect key="frame" x="121" y="28" width="133" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBH-UI-Rl6">
+                                <rect key="frame" x="107" y="589" width="160" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Começar Questionário"/>
+                                <connections>
+                                    <segue destination="8k9-Lp-fg3" kind="show" identifier="goToQuestionsView" id="SCM-vC-zGy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vFC-Ln-1GW"/>
@@ -302,7 +330,7 @@ rprevot@mongeralaegon.com.br</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AB-mh-aOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3437.5999999999999" y="967.4662668665668"/>
+            <point key="canvasLocation" x="1444" y="966.56671664167925"/>
         </scene>
         <!--Login-->
         <scene sceneID="teB-yO-uJD">
@@ -344,7 +372,7 @@ rprevot@mongeralaegon.com.br</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96z-zd-Kas">
-                                <rect key="frame" x="213" y="582" width="54" height="30"/>
+                                <rect key="frame" x="213" y="586" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Sign up"/>
@@ -373,7 +401,6 @@ rprevot@mongeralaegon.com.br</string>
                     <connections>
                         <outlet property="emailTextInput" destination="hAj-GG-KLT" id="thU-uS-0Ik"/>
                         <outlet property="senhaTextInput" destination="AeR-hN-3qd" id="dJT-tG-lwv"/>
-                        <segue destination="8k9-Lp-fg3" kind="show" identifier="goToQuestionsView" id="J8M-fM-w0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92z-iv-t4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,6 +444,7 @@ rprevot@mongeralaegon.com.br</string>
                                 <connections>
                                     <action selector="LoginButtonPressed:" destination="k9i-pJ-D9f" eventType="touchUpInside" id="ic1-gZ-TQl"/>
                                     <action selector="registerButtonPressed:" destination="Ndn-Ed-PRE" eventType="touchUpInside" id="JkU-wn-vRb"/>
+                                    <segue destination="obt-wR-8BQ" kind="show" identifier="goToInfoView" id="Z8m-AS-zQa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wat-SZ-Pem">
@@ -433,7 +461,6 @@ rprevot@mongeralaegon.com.br</string>
                     <connections>
                         <outlet property="emailTextInput" destination="wat-SZ-Pem" id="LAF-cP-xE4"/>
                         <outlet property="senhaTextInput" destination="hTs-2X-K0Y" id="uKx-0S-J5I"/>
-                        <segue destination="8k9-Lp-fg3" kind="show" identifier="goToQuestionsView" id="6hj-hl-Utx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxP-Gc-9y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -463,11 +490,12 @@ rprevot@mongeralaegon.com.br</string>
         <image name="Time" width="128" height="128"/>
         <image name="background1" width="500" height="755"/>
         <image name="background2" width="1800" height="1192"/>
+        <image name="background3" width="600" height="399"/>
         <image name="backgroundCity" width="800" height="553"/>
         <image name="gift" width="60" height="60"/>
         <image name="star" width="34" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J8M-fM-w0D"/>
+        <segue reference="Z8m-AS-zQa"/>
     </inferredMetricsTieBreakers>
 </document>

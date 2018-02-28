@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class InfoViewController: UIViewController {
 
     @IBOutlet weak var videoDisplay: UIWebView!
     

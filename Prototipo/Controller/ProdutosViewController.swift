@@ -26,8 +26,8 @@ class ProdutosViewController: UITableViewController {
         tableView.rowHeight = 80.0
         
         self.navigationItem.hidesBackButton = true
-        updateNavBar(withHexCode: FlatSkyBlue().hexValue())
-        //navigationController?.navigationBar.barTintColor = FlatSkyBlue()
+        //updateNavBar(withHexCode: FlatSkyBlue().hexValue())
+        
         messageLabel.text = "\(newClient.nome), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessar :)"
         
         loadProdutos()
@@ -99,6 +99,7 @@ class ProdutosViewController: UITableViewController {
         
         let color = FlatBlue()
         cell.backgroundColor = color
+        cell.tintColor = FlatWhite()
         cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
         
         return cell

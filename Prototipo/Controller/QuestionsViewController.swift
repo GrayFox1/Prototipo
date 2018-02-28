@@ -87,7 +87,7 @@ class QuestionsViewController: UIViewController {
         progressBar.frame.size.width = (view.frame.size.width / 4 ) * CGFloat(questionNum + 1)
         
         if(questionNum == 1){
-            welcomeLabel.text = "Seja bem-vindo \(newClient.nome)!😃"
+            welcomeLabel.text = "Seja bem-vinda \(newClient.nome)!😃"
             welcomeLabel.isHidden = false
         }
         else if(questionNum == 2){
