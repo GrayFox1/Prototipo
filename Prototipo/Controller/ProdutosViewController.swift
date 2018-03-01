@@ -16,17 +16,19 @@ class ProdutosViewController: UITableViewController {
     let realm = try! Realm()
     let produtosArray = ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E", "Produto F"]
     var newClient = Client()
-    
     var produtos : Results<Produto>?
+    var productIndex = -1
     
+    
+    @IBOutlet var infoButton: UIBarButtonItem!
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 80.0
         
+        tableView.rowHeight = 80.0
+        self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.hidesBackButton = true
-        //updateNavBar(withHexCode: FlatSkyBlue().hexValue())
         
         messageLabel.text = "\(newClient.nome), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessar :)"
         
@@ -70,19 +72,6 @@ class ProdutosViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func updateNavBar(withHexCode colorHexCode : String){
-        
-        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
-        guard let navBarColor = UIColor(hexString : colorHexCode) else {fatalError()}
-        
-        navBar.barTintColor = navBarColor
-        navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
-        
-        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)]
-        
-    }
-
-    
     //MARK: Métodos Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,22 +109,41 @@ class ProdutosViewController: UITableViewController {
             }
             
         }
+        if(self.navigationItem.rightBarButtonItem == nil){
+            self.navigationItem.rightBarButtonItem = self.infoButton
+        }
+        productIndex = indexPath.row
         
         tableView.deselectRow(at: indexPath , animated: true)
         tableView.reloadData()
     }
-
-    @IBAction func logOutAction(_ sender: UIBarButtonItem) {
-        
-        do{
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToInfoView"){
+            let destinationVC = segue.destination as! InfoViewController
+            destinationVC.productIndex = self.productIndex
+            
         }
-        catch{
-            print("Error signing out")
-        }
-        
     }
+    
+    
+    @IBAction func verInfoAction(_ sender: UIBarButtonItem) {
+        if(productIndex != -1){
+            performSegue(withIdentifier: "goToInfoView", sender: self)
+        }
+    }
+    
+//    @IBAction func logOutAction(_ sender: UIBarButtonItem) {
+//
+//        do{
+//            try Auth.auth().signOut()
+//            navigationController?.popToRootViewController(animated: true)
+//        }
+//        catch{
+//            print("Error signing out")
+//        }
+//
+//    }
     
     
 }

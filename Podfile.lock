@@ -53,6 +53,7 @@ PODS:
   - RealmSwift (3.1.1):
     - Realm (= 3.1.1)
   - SVProgressHUD (2.2.3)
+  - SwipeCellKit (2.0.1)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
@@ -61,6 +62,7 @@ DEPENDENCIES:
   - Firebase/Database
   - RealmSwift
   - SVProgressHUD
+  - SwipeCellKit
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -86,7 +88,8 @@ SPEC CHECKSUMS:
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   SVProgressHUD: a5eaeff664a82dda89809c409ace40183ce91523
+  SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
 
-PODFILE CHECKSUM: d8f59246c8f3c6c1f1c11460958178ec218a1c35
+PODFILE CHECKSUM: da39dea4553fd025225e967407eb217785507ce7
 
 COCOAPODS: 1.4.0
