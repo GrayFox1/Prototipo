@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
             else{
                 SVProgressHUD.dismiss()
                 print("Login concluído!")
-                self.performSegue(withIdentifier: "goToQuestionsView", sender: self)
+                self.performSegue(withIdentifier: "goToTabView", sender: self)
             }
         }
     }

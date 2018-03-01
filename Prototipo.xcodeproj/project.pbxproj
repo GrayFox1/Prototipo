@@ -19,6 +19,7 @@
 		65ACEFDD2037186300D41560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65ACEFDB2037186300D41560 /* LaunchScreen.storyboard */; };
 		65C32E9C2044FB17006BEB9E /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C32E9B2044FB17006BEB9E /* CreditsViewController.swift */; };
 		65C32E9E20451E56006BEB9E /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C32E9D20451E56006BEB9E /* Produto.swift */; };
+		65CE9CAF20483DC6009854FD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE9CAE20483DC6009854FD /* MainViewController.swift */; };
 		65E299DF2047BDC10091D5B6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E299DE2047BDC10091D5B6 /* InfoViewController.swift */; };
 		65EB0E0220385476004E6B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65EB0E0120385476004E6B54 /* GoogleService-Info.plist */; };
 		65EBE62E203DA931005F9844 /* ProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBE62D203DA931005F9844 /* ProdutosViewController.swift */; };
@@ -38,6 +39,7 @@
 		65ACEFDE2037186300D41560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65C32E9B2044FB17006BEB9E /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		65C32E9D20451E56006BEB9E /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		65CE9CAE20483DC6009854FD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		65E299DE2047BDC10091D5B6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		65EB0E0120385476004E6B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65EBE62D203DA931005F9844 /* ProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				65EBE62D203DA931005F9844 /* ProdutosViewController.swift */,
 				65C32E9B2044FB17006BEB9E /* CreditsViewController.swift */,
 				65E299DE2047BDC10091D5B6 /* InfoViewController.swift */,
+				65CE9CAE20483DC6009854FD /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EBE62E203DA931005F9844 /* ProdutosViewController.swift in Sources */,
+				65CE9CAF20483DC6009854FD /* MainViewController.swift in Sources */,
 				652DE27F2037F7A700ECB5A3 /* LoginViewController.swift in Sources */,
 				65C32E9E20451E56006BEB9E /* Produto.swift in Sources */,
 				65387DB820384B8100624070 /* QuestionsViewController.swift in Sources */,
