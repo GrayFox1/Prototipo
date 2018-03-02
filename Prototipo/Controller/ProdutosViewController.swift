@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import ChameleonFramework
 import RealmSwift
+import SwipeCellKit
 
 class ProdutosViewController: UITableViewController {
     
@@ -20,7 +21,8 @@ class ProdutosViewController: UITableViewController {
     var productIndex = -1
     
     
-    @IBOutlet var infoButton: UIBarButtonItem!
+    
+    @IBOutlet var concluirButton: UIBarButtonItem!
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
@@ -80,16 +82,17 @@ class ProdutosViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell (style: .default , reuseIdentifier : "ProdutoCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProdutoCell", for: indexPath) as! SwipeTableViewCell
         
         cell.textLabel?.text = produtos?[indexPath.row].title ?? "Sem Produtos :/"
-        
         cell.accessoryType = (produtos?[indexPath.row].state)! ? .checkmark : .none
         
         let color = FlatBlue()
         cell.backgroundColor = color
         cell.tintColor = FlatWhite()
         cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)
+        
+        cell.delegate = self
         
         return cell
     }
@@ -110,7 +113,7 @@ class ProdutosViewController: UITableViewController {
             
         }
         if(self.navigationItem.rightBarButtonItem == nil){
-            self.navigationItem.rightBarButtonItem = self.infoButton
+            self.navigationItem.rightBarButtonItem = self.concluirButton
         }
         productIndex = indexPath.row
         
@@ -122,17 +125,41 @@ class ProdutosViewController: UITableViewController {
         if(segue.identifier == "goToInfoView"){
             let destinationVC = segue.destination as! InfoViewController
             destinationVC.productIndex = self.productIndex
+        }
+        else if(segue.identifier == "goToRegisterView"){
+            let destinationVC2 = segue.destination as! RegisterViewController
+            destinationVC2.newClient = self.newClient
+        }
+    }
+    
+    
+    @IBAction func concluirAction(_ sender: UIBarButtonItem) {
+        
+        if(productIndex != -1){
+            performSegue(withIdentifier: "goToRegisterView", sender: self)
+        }
+    }
+    
+    
+}
+    
+extension ProdutosViewController : SwipeTableViewCellDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let infoAction = SwipeAction(style: .default, title: "Info") { action, indexPath in
+            self.performSegue(withIdentifier: "goToInfoView", sender: self)
             
         }
+        productIndex = indexPath.row
+        infoAction.image = UIImage(named: "info2")
+        
+        return [infoAction]
     }
-    
-    
-    @IBAction func verInfoAction(_ sender: UIBarButtonItem) {
-        if(productIndex != -1){
-            performSegue(withIdentifier: "goToInfoView", sender: self)
-        }
-    }
-    
+}
+
+
 //    @IBAction func logOutAction(_ sender: UIBarButtonItem) {
 //
 //        do{
@@ -145,5 +172,4 @@ class ProdutosViewController: UITableViewController {
 //
 //    }
     
-    
-}
+

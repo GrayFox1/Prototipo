@@ -226,7 +226,7 @@ Selecione os produtos que te interessar :)</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProdutoCell" id="Pag-R7-hsc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProdutoCell" id="Pag-R7-hsc" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="104" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pag-R7-hsc" id="Kna-1n-WCq">
@@ -242,14 +242,15 @@ Selecione os produtos que te interessar :)</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Easynsurance" id="HWk-bZ-Aw1">
-                        <barButtonItem key="rightBarButtonItem" title="Ver Info" id="XkN-oX-Ik3">
+                        <barButtonItem key="rightBarButtonItem" title="Concluir" id="XkN-oX-Ik3">
                             <connections>
-                                <action selector="verInfoAction:" destination="iye-Z5-NxK" id="ops-EB-0w1"/>
+                                <action selector="concluirAction:" destination="iye-Z5-NxK" id="iQD-8J-XNS"/>
+                                <segue destination="Ndn-Ed-PRE" kind="show" identifier="goToRegisterView" id="HLs-ej-Pfp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="infoButton" destination="XkN-oX-Ik3" id="slQ-fp-n5U"/>
+                        <outlet property="concluirButton" destination="XkN-oX-Ik3" id="Pd4-BF-hb7"/>
                         <outlet property="messageLabel" destination="U3H-6U-zpz" id="SfX-a2-iWY"/>
                         <segue destination="ltK-3H-mNZ" kind="show" identifier="goToInfoView" id="O8e-4c-txZ"/>
                     </connections>
@@ -676,7 +677,6 @@ Os pontos concedem descontos na mensalidade do seu contrato.
                                         <rect key="frame" x="322" y="10" width="45" height="30"/>
                                         <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="84f-Hh-VPT"/>
                                             <constraint firstAttribute="height" constant="30" id="V41-fL-YAd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -835,7 +835,6 @@ Número da apólise:</string>
                                 <connections>
                                     <action selector="LoginButtonPressed:" destination="k9i-pJ-D9f" eventType="touchUpInside" id="ic1-gZ-TQl"/>
                                     <action selector="registerButtonPressed:" destination="Ndn-Ed-PRE" eventType="touchUpInside" id="JkU-wn-vRb"/>
-                                    <segue destination="obt-wR-8BQ" kind="show" identifier="goToCreditsView" id="Z8m-AS-zQa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wat-SZ-Pem">
@@ -859,6 +858,8 @@ Número da apólise:</string>
                     <connections>
                         <outlet property="emailTextInput" destination="wat-SZ-Pem" id="LAF-cP-xE4"/>
                         <outlet property="senhaTextInput" destination="hTs-2X-K0Y" id="uKx-0S-J5I"/>
+                        <segue destination="UY0-jG-PNj" kind="presentation" identifier="goToTabView" id="eYZ-Mr-54w"/>
+                        <segue destination="obt-wR-8BQ" kind="show" identifier="goToCreditsView" id="oso-zN-ZiD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxP-Gc-9y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -932,6 +933,8 @@ Número da apólise:</string>
         <image name="user" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z8m-AS-zQa"/>
+        <segue reference="HLs-ej-Pfp"/>
+        <segue reference="eYZ-Mr-54w"/>
+        <segue reference="oso-zN-ZiD"/>
     </inferredMetricsTieBreakers>
 </document>

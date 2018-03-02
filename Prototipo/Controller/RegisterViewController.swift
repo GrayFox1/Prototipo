@@ -11,6 +11,8 @@ import Firebase
 import SVProgressHUD
 
 class RegisterViewController: UIViewController {
+    
+    var newClient : Client?
 
     @IBOutlet weak var emailTextInput: UITextField!
     @IBOutlet weak var senhaTextInput: UITextField!
@@ -36,7 +38,12 @@ class RegisterViewController: UIViewController {
             else{
                 SVProgressHUD.dismiss()
                 print("Cadastro concluído!")
-                self.performSegue(withIdentifier: "goToQuestionsView", sender: self)
+                if(self.newClient == nil){
+                    self.performSegue(withIdentifier: "goToCreditsView", sender: self)
+                }
+                else{
+                    self.performSegue(withIdentifier: "goToTabView", sender: self)
+                }
             }
         }
     }
@@ -54,14 +61,8 @@ class RegisterViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }
