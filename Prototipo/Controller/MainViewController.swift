@@ -10,12 +10,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var newClient : Client?
     let empresaImages = ["empresa1", "empresa2", "empresa3"]
     var updateCounter = 0
     var timer : Timer?
 
     @IBOutlet weak var infoImage: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -25,10 +27,18 @@ class MainViewController: UIViewController {
             self.tabBarController?.tabBar.isHidden = false
         }
         
+        nameLabel.text = newClient?.nome ?? "Falha na rede"
         infoImage.image = UIImage(named: "empresa1")
         updateCounter = 0
         
         timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(MainViewController.updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     @objc func updateTimer(){

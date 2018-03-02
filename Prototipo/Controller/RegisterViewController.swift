@@ -62,7 +62,12 @@ class RegisterViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if(segue.identifier == "goToTabView"){
+            let destinationBVC = segue.destination as! UITabBarController
+            let destinationNVC = destinationBVC.viewControllers![0] as! UINavigationController
+            let destinationVC = destinationNVC.topViewController as! MainViewController
+            destinationVC.newClient = self.newClient
+        }
     }
 
 }
