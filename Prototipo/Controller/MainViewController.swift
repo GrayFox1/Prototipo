@@ -21,6 +21,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if(self.tabBarController?.tabBar.isHidden == true){
+            self.tabBarController?.tabBar.isHidden = false
+        }
+        
         infoImage.image = UIImage(named: "empresa1")
         updateCounter = 0
         
