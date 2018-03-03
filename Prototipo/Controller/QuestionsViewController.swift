@@ -86,7 +86,9 @@ class QuestionsViewController: UIViewController {
         progressBar.frame.size.width = (view.frame.size.width / 4 ) * CGFloat(questionNum + 1)
         
         if(questionNum == 1){
-            welcomeLabel.text = "Seja bem-vinda \(newClient.nome)!😃"
+            var temp = newClient.nome.components(separatedBy: " ")
+            let userName = temp.removeFirst()
+            welcomeLabel.text = "Seja bem-vinda \(userName)!😃"
             welcomeLabel.isHidden = false
         }
         else if(questionNum == 2){
@@ -125,7 +127,9 @@ class QuestionsViewController: UIViewController {
         let resp = answerTextInput.text
         
         if(questionNum == 0){
-            return true
+            if(resp!.count > 1){
+                return true
+            }
         }
         else if(questionNum == 1){
             let idade = Int(resp!)!

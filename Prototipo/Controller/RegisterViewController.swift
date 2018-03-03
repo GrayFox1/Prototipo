@@ -13,6 +13,7 @@ import SVProgressHUD
 class RegisterViewController: UIViewController {
     
     var newClient : Client?
+    var errorCode : Int = 0
 
     @IBOutlet weak var emailTextInput: UITextField!
     @IBOutlet weak var senhaTextInput: UITextField!
@@ -20,7 +21,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
@@ -31,9 +31,19 @@ class RegisterViewController: UIViewController {
             (user, error) in
             
             if ( error != nil) {
-                print(error!)
+                print(error.debugDescription)
+
+                if(error.debugDescription.contains("17008")){
+                    self.errorCode = 17008  //E-mail inválido
+                }
+                else if(error.debugDescription.contains("17007")){
+                    self.errorCode = 17007  //User já existe
+                }
+                else if(error.debugDescription.contains("17026")){
+                    self.errorCode = 17026  //Senha fraca
+                }
                 SVProgressHUD.dismiss()
-                self.showAlert()
+                self.showAlert(code : self.errorCode)
             }
             else{
                 SVProgressHUD.dismiss()
@@ -48,9 +58,20 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    func showAlert(){
+    func showAlert(code : Int){
         
-        let alert = UIAlertController(title: "E-mail ou senha inválido 😢", message: "A senha deve conter no mínimo 6 caracteres", preferredStyle: .alert)
+        var alert = UIAlertController(title: "E-mail ou senha inválido 😢", message: "A senha deve conter no mínimo 6 caracteres", preferredStyle: .alert)
+        
+        if(code == 17007){
+            alert = UIAlertController(title: "Usuário já cadastrado! 😥", message: "Caso seja você, faça login :)", preferredStyle: .alert)
+        }
+        else if(code == 17008){
+            alert = UIAlertController(title: "E-mail inválido! 😢", message: "", preferredStyle: .alert)
+        }
+        else if(code == 17026){
+            alert = UIAlertController(title: "Senha inválida! 😭", message: "A senha deve conter no mínimo 6 caracteres", preferredStyle: .alert)
+        }
+        
         let okButton = UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
             self.emailTextInput.text = ""
             self.senhaTextInput.text = ""

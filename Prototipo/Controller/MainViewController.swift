@@ -24,7 +24,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = newClient?.nome ?? "Falha na rede"
+        var temp = newClient?.nome.components(separatedBy: " ")
+        let userName = temp?.removeFirst() ?? "Falha na rede"
+        nameLabel.text = userName
+        //nameLabel.text = newClient?.nome ?? "Falha na rede"
         infoImage.image = UIImage(named: "empresa1")
         updateCounter = 0
         
@@ -41,7 +44,7 @@ class MainViewController: UIViewController {
         navBar.tintColor = UIColor.white
         navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(UIColor.black, returnFlat: true)]
         
-        self.tabBarController?.tabBar.isHidden = false
+        
     }
     
     @objc func updateTimer(){

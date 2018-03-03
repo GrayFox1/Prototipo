@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UY0-jG-PNj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jc9-gG-2Md">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -256,7 +256,7 @@ Selecione os produtos que te interessar :)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pFr-O7-z12">
-                                <rect key="frame" x="187" y="64" width="172" height="62"/>
+                                <rect key="frame" x="187" y="54" width="172" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGP-5s-oog">
@@ -353,8 +353,12 @@ Selecione os produtos que te interessar :)</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cjJ-oN-LkH">
+                                <rect key="frame" x="187" y="47" width="172" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pjv-kM-N5v">
-                                <rect key="frame" x="16" y="151" width="343" height="183"/>
+                                <rect key="frame" x="16" y="159" width="343" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -461,7 +465,7 @@ Selecione os produtos que te interessar :)</string>
             </objects>
             <point key="canvasLocation" x="1444" y="133.5832083958021"/>
         </scene>
-        <!--Intro-->
+        <!--Main View Controller-->
         <scene sceneID="0J1-of-Ro2">
             <objects>
                 <viewController id="dpA-xy-Aqc" customClass="MainViewController" customModule="Prototipo" customModuleProvider="target" sceneMemberID="viewController">
@@ -489,7 +493,7 @@ Selecione os produtos que te interessar :)</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lza-bR-etn">
-                                        <rect key="frame" x="219" y="41" width="77" height="21"/>
+                                        <rect key="frame" x="219" y="37" width="77" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -568,7 +572,7 @@ Selecione os produtos que te interessar :)</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="f3v-Ou-dbw"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Intro" id="U1t-Cd-9HT"/>
+                    <navigationItem key="navigationItem" id="U1t-Cd-9HT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="infoImage" destination="kjz-vn-l9y" id="abr-nV-jdb"/>
@@ -580,15 +584,15 @@ Selecione os produtos que te interessar :)</string>
             </objects>
             <point key="canvasLocation" x="3165.5999999999999" y="-574.36281859070471"/>
         </scene>
-        <!--Opções-->
+        <!--View Controller-->
         <scene sceneID="6L3-7k-Xwm">
             <objects>
-                <viewController title="Opções" id="MwK-2y-AVZ" sceneMemberID="viewController">
+                <viewController id="MwK-2y-AVZ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V45-kr-Myn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew" translatesAutoresizingMaskIntoConstraints="NO" id="j0c-V9-DPi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew" translatesAutoresizingMaskIntoConstraints="NO" id="j0c-V9-DPi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -995,7 +999,7 @@ Suporte 24h</string>
         <image name="user" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wil-ev-tvV"/>
+        <segue reference="HLs-ej-Pfp"/>
         <segue reference="kxI-co-SDH"/>
         <segue reference="hIh-yV-MKk"/>
     </inferredMetricsTieBreakers>

@@ -87,7 +87,7 @@ class ProdutosViewController: UITableViewController {
         cell.textLabel?.text = produtos?[indexPath.row].title ?? "Sem Produtos :/"
         cell.accessoryType = (produtos?[indexPath.row].state)! ? .checkmark : .none
         
-        let color = FlatBlue()
+        let color = FlatOrange()
         cell.backgroundColor = color
         cell.tintColor = FlatWhite()
         cell.textLabel?.textColor = ContrastColorOf(color, returnFlat: true)

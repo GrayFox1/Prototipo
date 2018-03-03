@@ -99,8 +99,7 @@
 				65ACEFD62037186300D41560 /* Main.storyboard */,
 				65ACEFD92037186300D41560 /* Assets.xcassets */,
 				65ACEFDB2037186300D41560 /* LaunchScreen.storyboard */,
-				65AA347B2048F0490042F19D /* MessageCell.xib */,
-				65AA347E2048FA010042F19D /* CustomMessageCell.swift */,
+				65A1E10B204AD2D700A5898A /* Custom Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +112,15 @@
 				65AA34812048FE8B0042F19D /* Message.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		65A1E10B204AD2D700A5898A /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65AA347B2048F0490042F19D /* MessageCell.xib */,
+				65AA347E2048FA010042F19D /* CustomMessageCell.swift */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		65ACEFC62037186200D41560 = {

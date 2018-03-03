@@ -11,6 +11,8 @@ import Firebase
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
+    
+    var errorCode : Int = 0
 
     @IBOutlet weak var emailTextInput: UITextField!
     @IBOutlet weak var senhaTextInput: UITextField!
@@ -36,7 +38,18 @@ class LoginViewController: UIViewController {
             if(error != nil){
                 print(error!)
                 SVProgressHUD.dismiss()
-                self.showAlert()
+                self.showAlert(code : self.errorCode)
+                
+                if(error.debugDescription.contains("17008")){
+                    self.errorCode = 17008  //E-mail inválido
+                }
+                else if(error.debugDescription.contains("17009")){
+                    self.errorCode = 17009  //Senha inválida
+                }
+                else if(error.debugDescription.contains("17011")){
+                    self.errorCode = 17011  //User não existe
+                }
+                
             }
             else{
                 SVProgressHUD.dismiss()
@@ -46,9 +59,20 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func showAlert(){
+    func showAlert(code : Int){
         
-        let alert = UIAlertController(title: "E-mail ou senha inválido 😢", message: "", preferredStyle: .alert)
+        var alert = UIAlertController(title: "E-mail ou senha inválido 😢", message: "", preferredStyle: .alert)
+        
+        if(code == 17009){
+            alert = UIAlertController(title: "Senha inválida! 😥", message: "", preferredStyle: .alert)
+        }
+        else if(code == 17008){
+            alert = UIAlertController(title: "E-mail inválido! 😭", message: "", preferredStyle: .alert)
+        }
+        else if(code == 17011){
+            alert = UIAlertController(title: "Usuário não existe! 😥", message: "", preferredStyle: .alert)
+        }
+        
         let okButton = UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
             self.emailTextInput.text = ""
             self.senhaTextInput.text = ""
@@ -59,15 +83,5 @@ class LoginViewController: UIViewController {
         
     }
     
-   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -24,7 +24,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.tintColor = UIColor.black
+        navigationController?.navigationBar.tintColor = FlatBlack()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(FlatWhite(), returnFlat: true)]
         
         messageTableView.delegate = self
@@ -38,6 +38,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         loadMessages()
         configureTableView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(FlatBlack(), returnFlat: true)]
     }
     
     func configureTableView (){
