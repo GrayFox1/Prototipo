@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class MainViewController: UIViewController {
     
@@ -23,10 +24,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(self.tabBarController?.tabBar.isHidden == true){
-            self.tabBarController?.tabBar.isHidden = false
-        }
-        
         nameLabel.text = newClient?.nome ?? "Falha na rede"
         infoImage.image = UIImage(named: "empresa1")
         updateCounter = 0
@@ -35,10 +32,16 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        
+        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
+        navBar.setBackgroundImage(UIImage(), for: .default)
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        navBar.tintColor = UIColor.white
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(UIColor.black, returnFlat: true)]
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     @objc func updateTimer(){

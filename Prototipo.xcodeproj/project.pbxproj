@@ -14,6 +14,7 @@
 		6548E389203A2E0A00924554 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548E388203A2E0A00924554 /* Client.swift */; };
 		65A50DBF204A3CB8002CE927 /* MinhaContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */; };
 		65A50DC1204A5233002CE927 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DC0204A5233002CE927 /* PageViewController.swift */; };
+		65A50DC7204A7C20002CE927 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */; };
 		65AA347C2048F0490042F19D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA347A2048F0490042F19D /* ChatViewController.swift */; };
 		65AA347D2048F0490042F19D /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65AA347B2048F0490042F19D /* MessageCell.xib */; };
 		65AA347F2048FA010042F19D /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA347E2048FA010042F19D /* CustomMessageCell.swift */; };
@@ -38,6 +39,7 @@
 		6548E388203A2E0A00924554 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaContaViewController.swift; sourceTree = "<group>"; };
 		65A50DC0204A5233002CE927 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		65AA347A2048F0490042F19D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		65AA347B2048F0490042F19D /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		65AA347E2048FA010042F19D /* CustomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				65AA347A2048F0490042F19D /* ChatViewController.swift */,
 				65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */,
 				65A50DC0204A5233002CE927 /* PageViewController.swift */,
+				65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				65EBE62E203DA931005F9844 /* ProdutosViewController.swift in Sources */,
 				65CE9CAF20483DC6009854FD /* MainViewController.swift in Sources */,
 				652DE27F2037F7A700ECB5A3 /* LoginViewController.swift in Sources */,
+				65A50DC7204A7C20002CE927 /* CustomTabBarViewController.swift in Sources */,
 				65C32E9E20451E56006BEB9E /* Produto.swift in Sources */,
 				65A50DBF204A3CB8002CE927 /* MinhaContaViewController.swift in Sources */,
 				65387DB820384B8100624070 /* QuestionsViewController.swift in Sources */,

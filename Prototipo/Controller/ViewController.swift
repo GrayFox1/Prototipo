@@ -17,25 +17,18 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //updateNavBar(withHexCode: FlatWhite().hexValue())
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+
+        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
+
+        navBar.setBackgroundImage(UIImage(), for: .default)
+        navBar.shadowImage = UIImage()
+        navBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        navBar.tintColor = UIColor.white
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(FlatBlack(), returnFlat: true)]
         
     }
     
-    func updateNavBar(withHexCode colorHexCode : String){
-        
-        guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
-        guard let navBarColor = UIColor(hexString : colorHexCode) else {fatalError()}
-        
-        navBar.barTintColor = navBarColor
-        navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
-        
-        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)]
-        
-    }
 
 }
 
