@@ -17,7 +17,6 @@ class QuestionsViewController: UIViewController {
     let newClient = Client()
     
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerTextInput: UITextField!
@@ -83,7 +82,7 @@ class QuestionsViewController: UIViewController {
     
     func updateView (){
         answerTextInput.text = ""
-        progressLabel.text = "\(questionNum + 1) / \(questionsArray.count)"
+
         progressBar.frame.size.width = (view.frame.size.width / 4 ) * CGFloat(questionNum + 1)
         
         if(questionNum == 1){
