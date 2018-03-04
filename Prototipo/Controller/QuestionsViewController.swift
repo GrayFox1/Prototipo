@@ -48,7 +48,8 @@ class QuestionsViewController: UIViewController {
             updateView()
         }
         else{
-            if(Auth.auth().currentUser?.email != nil){ // Possui login
+            if let user = Auth.auth().currentUser {
+                print("Email: " + (user.email!))
                 writeBD()
             }
             else{

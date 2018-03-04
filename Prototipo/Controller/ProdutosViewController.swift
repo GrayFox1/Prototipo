@@ -130,16 +130,27 @@ class ProdutosViewController: UITableViewController {
             let destinationVC2 = segue.destination as! RegisterViewController
             destinationVC2.newClient = self.newClient
         }
+        else if(segue.identifier == "goToTabView"){
+            let destinationBVC = segue.destination as! UITabBarController
+            let destinationNVC = destinationBVC.viewControllers![0] as! UINavigationController
+            let destinationVC = destinationNVC.topViewController as! MainViewController
+            destinationVC.newClient = self.newClient
+        }
     }
     
     
     @IBAction func concluirAction(_ sender: UIBarButtonItem) {
         
         if(productIndex != -1){
-            performSegue(withIdentifier: "goToRegisterView", sender: self)
+            if let user = Auth.auth().currentUser {
+                print("Email: " + (user.email!))
+                self.performSegue(withIdentifier: "goToTabView", sender: self)
+            }
+            else{
+                self.performSegue(withIdentifier: "goToRegisterView", sender: self)
+            }
         }
     }
-    
     
 }
     
@@ -159,17 +170,5 @@ extension ProdutosViewController : SwipeTableViewCellDelegate {
     }
 }
 
-
-//    @IBAction func logOutAction(_ sender: UIBarButtonItem) {
-//
-//        do{
-//            try Auth.auth().signOut()
-//            navigationController?.popToRootViewController(animated: true)
-//        }
-//        catch{
-//            print("Error signing out")
-//        }
-//
-//    }
     
 

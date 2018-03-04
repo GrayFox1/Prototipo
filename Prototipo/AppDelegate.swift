@@ -22,6 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //print(Realm.Configuration.defaultConfiguration.fileURL)
         
+        if let user = Auth.auth().currentUser {
+            do{
+                print("Conta logada: " + (user.email!))
+                try Auth.auth().signOut()
+            }
+            catch{
+                print("Nenhum user logado")
+            }
+        }
+        
         return true
     }
 
@@ -45,6 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+//        if let user = Auth.auth().currentUser {
+//            do{
+//                try Auth.auth().signOut()
+//                print("Email: " + (user.email!))
+//            }
+//            catch{
+//                print("Nenhum user logado")
+//            }
+//        }
     }
 
 

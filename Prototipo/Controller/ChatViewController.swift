@@ -70,12 +70,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.avatarImage.image = UIImage(named: "user" )
         
         if( cell.senderName.text == Auth.auth().currentUser?.email as String!) { //Minhas msgs
-            cell.avatarImage.backgroundColor = FlatSkyBlue()
-            cell.messageBackground.backgroundColor = FlatSkyBlue()
+            cell.avatarImage.backgroundColor = FlatYellow()
+            cell.messageBackground.backgroundColor = FlatYellow()
+            cell.messageLabel.textColor = FlatOrangeDark()
+            cell.senderName.textColor = FlatOrangeDark()
         }
         else{ //Msgs do corretor
-            cell.avatarImage.backgroundColor = FlatWatermelon()
-            cell.messageBackground.backgroundColor = FlatGray()
+            cell.avatarImage.backgroundColor = FlatOrangeDark()
+            cell.messageBackground.backgroundColor = FlatOrangeDark()
+            cell.messageLabel.textColor = FlatWhite()
+            cell.senderName.textColor = FlatWhite()
         }
         
         return cell

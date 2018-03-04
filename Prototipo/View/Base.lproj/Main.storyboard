@@ -190,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Z-Tx-1G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293.5999999999999" y="966.56671664167925"/>
+            <point key="canvasLocation" x="2294" y="967"/>
         </scene>
         <!--Segureasy-->
         <scene sceneID="7fd-TD-PcV">
@@ -229,7 +229,6 @@ Selecione os produtos que te interessar :)</string>
                         <barButtonItem key="rightBarButtonItem" title="Concluir" id="XkN-oX-Ik3">
                             <connections>
                                 <action selector="concluirAction:" destination="iye-Z5-NxK" id="iQD-8J-XNS"/>
-                                <segue destination="Ndn-Ed-PRE" kind="show" identifier="goToRegisterView" id="HLs-ej-Pfp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -237,11 +236,13 @@ Selecione os produtos que te interessar :)</string>
                         <outlet property="concluirButton" destination="XkN-oX-Ik3" id="Pd4-BF-hb7"/>
                         <outlet property="messageLabel" destination="U3H-6U-zpz" id="SfX-a2-iWY"/>
                         <segue destination="ltK-3H-mNZ" kind="show" identifier="goToInfoView" id="O8e-4c-txZ"/>
+                        <segue destination="UY0-jG-PNj" kind="presentation" identifier="goToTabView" id="oBC-zx-Hbh"/>
+                        <segue destination="Ndn-Ed-PRE" kind="show" identifier="goToRegisterView" id="dcV-6b-oET"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5U-sf-O6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3188" y="967"/>
+            <point key="canvasLocation" x="3241" y="134"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="SCa-Nw-tdT">
@@ -251,8 +252,8 @@ Selecione os produtos que te interessar :)</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew" translatesAutoresizingMaskIntoConstraints="NO" id="wPb-Hy-pv7">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew" translatesAutoresizingMaskIntoConstraints="NO" id="wPb-Hy-pv7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pFr-O7-z12">
@@ -331,7 +332,7 @@ Selecione os produtos que te interessar :)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tib-XJ-MtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4096.8000000000002" y="966.56671664167925"/>
+            <point key="canvasLocation" x="4194" y="134"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="YUh-uu-Zap">
@@ -740,10 +741,10 @@ Selecione os produtos que te interessar :)</string>
             </objects>
             <point key="canvasLocation" x="4861.6000000000004" y="-574.36281859070471"/>
         </scene>
-        <!--View Controller-->
+        <!--Minha Conta View Controller-->
         <scene sceneID="FfO-Ac-lJh">
             <objects>
-                <viewController id="blg-KU-BJC" sceneMemberID="viewController">
+                <viewController id="blg-KU-BJC" customClass="MinhaContaViewController" customModule="Prototipo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vNn-dR-SmR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -771,7 +772,7 @@ Gênero: Feminino</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RPX-aQ-LNO">
-                                <rect key="frame" x="16" y="339" width="202" height="95"/>
+                                <rect key="frame" x="16" y="288" width="202" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Beneficiários:
 Número da apólise:</string>
@@ -780,12 +781,23 @@ Número da apólise:</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3G-4u-nf1">
-                                <rect key="frame" x="62" y="501" width="251" height="57"/>
+                                <rect key="frame" x="62" y="417" width="251" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Atualizar meus dados" backgroundImage="botao2">
                                     <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EN4-p6-pGw">
+                                <rect key="frame" x="127" y="504" width="121" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Sair" backgroundImage="botao1">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutAction:" destination="blg-KU-BJC" eventType="touchUpInside" id="ihM-iV-VEr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TU2-4j-7wr"/>
@@ -793,10 +805,13 @@ Número da apólise:</string>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="rZ0-j6-gdb"/>
                     <navigationItem key="navigationItem" id="C0n-WW-Wcf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Jc9-gG-2Md" kind="presentation" identifier="goToIntroView" id="2sY-Xn-DQT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUd-7A-ofo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2406" y="-1308"/>
+            <point key="canvasLocation" x="2405.5999999999999" y="-1308.3958020989505"/>
         </scene>
         <!--Custom Tab Bar View Controller-->
         <scene sceneID="uwI-pu-Wrm">
@@ -999,8 +1014,8 @@ Suporte 24h</string>
         <image name="user" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HLs-ej-Pfp"/>
-        <segue reference="kxI-co-SDH"/>
+        <segue reference="dcV-6b-oET"/>
+        <segue reference="oBC-zx-Hbh"/>
         <segue reference="hIh-yV-MKk"/>
     </inferredMetricsTieBreakers>
 </document>

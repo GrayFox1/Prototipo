@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MinhaContaViewController: UIViewController {
 
@@ -15,14 +16,18 @@ class MinhaContaViewController: UIViewController {
 
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+    
+    @IBAction func logOutAction(_ sender: UIButton) {
         
+        do{
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "goToIntroView", sender: self)
+        }
+        catch{
+            print("Erro ao deslogar")
+        }
     }
-
+    
 
 
 }

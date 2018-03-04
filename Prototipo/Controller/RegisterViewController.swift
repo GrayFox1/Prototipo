@@ -52,6 +52,7 @@ class RegisterViewController: UIViewController {
                     self.performSegue(withIdentifier: "goToCreditsView", sender: self)
                 }
                 else{
+                    self.writeBD()
                     self.performSegue(withIdentifier: "goToTabView", sender: self)
                 }
             }
@@ -89,6 +90,27 @@ class RegisterViewController: UIViewController {
             let destinationVC = destinationNVC.topViewController as! MainViewController
             destinationVC.newClient = self.newClient
         }
+    }
+    
+    func writeBD(){
+        let messagesBD = Database.database().reference().child("Clientes")
+        let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient?.nome, "Idade" : newClient?.idade.description , "PraticaEsporte" : newClient?.praticaEsporte , "Fumante" : newClient?.fumante ]
+        
+        SVProgressHUD.show()
+        
+        messagesBD.childByAutoId().setValue(clientData) {
+            (error, reference) in
+            
+            if(error != nil){
+                print(error!)
+            }
+            else{
+                SVProgressHUD.dismiss()
+                print("New client data saved successfully!")
+            }
+            
+        }
+        
     }
 
 }
