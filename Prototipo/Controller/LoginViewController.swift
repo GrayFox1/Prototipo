@@ -67,9 +67,11 @@ class LoginViewController: UIViewController {
             self.newClient.fumante = data?["Fumante"] as! String
             self.newClient.praticaEsporte = data?["PraticaEsporte"] as! String
             self.newClient.idade = Int(data?["Idade"] as! String)!
-            let temp = NSMutableArray(array: data?["Produtos Selecionados"] as! [String])
-            self.newClient.produtosSelected = temp as! [String]
-            
+            if(data?["Produtos Selecionados"] != nil){
+                let temp = NSMutableArray(array: (data?["Produtos Selecionados"] as! [String]))
+                self.newClient.produtosSelected = temp as! [String]
+            }
+        
             self.performSegue(withIdentifier: "goToTabView", sender: self)
         }
 
