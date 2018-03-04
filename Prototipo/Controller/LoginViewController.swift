@@ -13,6 +13,7 @@ import SVProgressHUD
 class LoginViewController: UIViewController {
     
     var errorCode : Int = 0
+    var newClient = Client()
 
     @IBOutlet weak var emailTextInput: UITextField!
     @IBOutlet weak var senhaTextInput: UITextField!
@@ -20,12 +21,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
@@ -52,10 +47,39 @@ class LoginViewController: UIViewController {
                 
             }
             else{
+                self.retrieveClientData()
                 SVProgressHUD.dismiss()
                 print("Login concluído!")
-                self.performSegue(withIdentifier: "goToTabView", sender: self)
             }
+        }
+    }
+    
+    func retrieveClientData(){
+        
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference().child("Clientes").child(userID!)
+
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            
+            let data = snapshot.value as? NSDictionary
+            
+            self.newClient.nome = data?["Nome"] as! String
+            self.newClient.fumante = data?["Fumante"] as! String
+            self.newClient.praticaEsporte = data?["PraticaEsporte"] as! String
+            self.newClient.idade = Int(data?["Idade"] as! String)!
+            
+            self.performSegue(withIdentifier: "goToTabView", sender: self)
+        }
+
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToTabView"){
+            let destinationBVC = segue.destination as! UITabBarController
+            let destinationNVC = destinationBVC.viewControllers![0] as! UINavigationController
+            let destinationVC = destinationNVC.topViewController as! MainViewController
+            destinationVC.newClient = self.newClient
         }
     }
     

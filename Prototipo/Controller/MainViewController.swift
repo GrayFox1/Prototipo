@@ -24,10 +24,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var temp = newClient?.nome.components(separatedBy: " ")
-        let userName = temp?.removeFirst() ?? "Falha na rede"
-        nameLabel.text = userName
-        //nameLabel.text = newClient?.nome ?? "Falha na rede"
         infoImage.image = UIImage(named: "empresa1")
         updateCounter = 0
         
@@ -35,6 +31,13 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        print("********")
+        print(newClient?.nome)
+        print("********")
+        var temp = newClient?.nome.components(separatedBy: " ")
+        let userName = temp?.removeFirst() ?? "Falha na rede"
+        nameLabel.text = userName
         
         guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
         navBar.setBackgroundImage(UIImage(), for: .default)

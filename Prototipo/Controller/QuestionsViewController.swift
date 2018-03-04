@@ -63,8 +63,10 @@ class QuestionsViewController: UIViewController {
         let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient.nome, "Idade" : String(newClient.idade), "PraticaEsporte" : newClient.praticaEsporte , "Fumante" : newClient.fumante ]
         
         SVProgressHUD.show()
+        //messagesBD.childByAutoId().setValue(clientData)
+        let userID = Auth.auth().currentUser?.uid
         
-        messagesBD.childByAutoId().setValue(clientData) {
+        messagesBD.child(userID!).setValue(clientData) {
             (error, reference) in
             
             if(error != nil){
