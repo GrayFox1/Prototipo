@@ -14,5 +14,6 @@ class Client {
     var idade : Int = -1
     var praticaEsporte : String = ""
     var fumante : String = ""
+    var produtosSelected = [String]()
     
 }

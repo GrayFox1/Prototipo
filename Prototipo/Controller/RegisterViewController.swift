@@ -93,13 +93,25 @@ class RegisterViewController: UIViewController {
     }
     
     func writeBD(){
-        let messagesBD = Database.database().reference().child("Clientes")
-        let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient?.nome, "Idade" : newClient?.idade.description , "PraticaEsporte" : newClient?.praticaEsporte , "Fumante" : newClient?.fumante ]
+        let ref = Database.database().reference().child("Clientes")
+        let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient?.nome, "Idade" : newClient?.idade.description , "PraticaEsporte" : newClient?.praticaEsporte , "Fumante" : newClient?.fumante]
         
         SVProgressHUD.show()
         let userID = Auth.auth().currentUser?.uid
         
-        messagesBD.child(userID!).setValue(clientData) {
+        ref.child(userID!).setValue(clientData) {
+            (error, reference) in
+            
+            if(error != nil){
+                print(error!)
+            }
+            else{
+                print("New client data saved successfully Part 1!")
+            }
+            
+        }
+        
+        ref.child(userID!).child("Produtos Selecionados").setValue(newClient?.produtosSelected) {
             (error, reference) in
             
             if(error != nil){
@@ -107,11 +119,10 @@ class RegisterViewController: UIViewController {
             }
             else{
                 SVProgressHUD.dismiss()
-                print("New client data saved successfully!")
+                print("New client data saved successfully Part 2!")
             }
             
         }
-        
     }
 
 }

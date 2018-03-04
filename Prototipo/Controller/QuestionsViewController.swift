@@ -59,14 +59,13 @@ class QuestionsViewController: UIViewController {
     }
     
     func writeBD(){
-        let messagesBD = Database.database().reference().child("Clientes")
+        let ref = Database.database().reference().child("Clientes")
         let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient.nome, "Idade" : String(newClient.idade), "PraticaEsporte" : newClient.praticaEsporte , "Fumante" : newClient.fumante ]
         
         SVProgressHUD.show()
-        //messagesBD.childByAutoId().setValue(clientData)
         let userID = Auth.auth().currentUser?.uid
         
-        messagesBD.child(userID!).setValue(clientData) {
+        ref.child(userID!).setValue(clientData) {
             (error, reference) in
             
             if(error != nil){
@@ -74,7 +73,7 @@ class QuestionsViewController: UIViewController {
             }
             else{
                 SVProgressHUD.dismiss()
-                print("New client data saved successfully!")
+                print("New client data saved successfully Part 1!")
                 self.performSegue(withIdentifier: "goToProdutosView", sender: self)
         
             }

@@ -32,9 +32,6 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        print("********")
-        print(newClient?.nome)
-        print("********")
         var temp = newClient?.nome.components(separatedBy: " ")
         let userName = temp?.removeFirst() ?? "Falha na rede"
         nameLabel.text = userName
@@ -60,6 +57,19 @@ class MainViewController: UIViewController {
         }
         infoImage.image = UIImage(named: empresaImages[updateCounter])
         pageControl.currentPage = updateCounter
+    }
+    
+    
+    @IBAction func verFavoritosAction(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "goToMeusProdutosView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToMeusProdutosView"){
+            let destinationVC = segue.destination as! MeusProdutosViewController
+            destinationVC.client = self.newClient
+        }
     }
     
     

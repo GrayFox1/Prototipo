@@ -12,7 +12,6 @@ class CreditsViewController: UIViewController {
 
     @IBOutlet weak var videoDisplay: UIWebView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

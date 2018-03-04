@@ -11,6 +11,7 @@ import Firebase
 import ChameleonFramework
 import RealmSwift
 import SwipeCellKit
+import SVProgressHUD
 
 class ProdutosViewController: UITableViewController {
     
@@ -111,6 +112,17 @@ class ProdutosViewController: UITableViewController {
                 print("Erro ao atualizar dados, \(error)")
             }
             
+            if(produto.state){
+                newClient.produtosSelected.append(produto.title)
+            }
+            else{
+                if let index = newClient.produtosSelected.index(of: produto.title) {
+                    newClient.produtosSelected.remove(at: index)
+                }
+                
+            }
+            
+            
         }
         if(self.navigationItem.rightBarButtonItem == nil){
             self.navigationItem.rightBarButtonItem = self.concluirButton
@@ -144,11 +156,32 @@ class ProdutosViewController: UITableViewController {
         if(productIndex != -1){
             if let user = Auth.auth().currentUser {
                 print("Email: " + (user.email!))
-                self.performSegue(withIdentifier: "goToTabView", sender: self)
+                writeBD()
             }
             else{
                 self.performSegue(withIdentifier: "goToRegisterView", sender: self)
             }
+        }
+    }
+    
+    func writeBD(){
+        let ref = Database.database().reference().child("Clientes")
+        
+        SVProgressHUD.show()
+        let userID = Auth.auth().currentUser?.uid
+        
+        ref.child(userID!).child("Produtos Selecionados").setValue(newClient.produtosSelected) {
+            (error, reference) in
+            
+            if(error != nil){
+                print(error!)
+            }
+            else{
+                SVProgressHUD.dismiss()
+                print("New client data saved successfully Part 2!")
+                self.performSegue(withIdentifier: "goToTabView", sender: self)
+            }
+            
         }
     }
     

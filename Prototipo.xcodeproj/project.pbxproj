@@ -12,6 +12,7 @@
 		652DE2812037F9ED00ECB5A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DE2802037F9ED00ECB5A3 /* RegisterViewController.swift */; };
 		65387DB820384B8100624070 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65387DB720384B8100624070 /* QuestionsViewController.swift */; };
 		6548E389203A2E0A00924554 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548E388203A2E0A00924554 /* Client.swift */; };
+		658EA56A204C8C3400BF0D7E /* MeusProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EA569204C8C3400BF0D7E /* MeusProdutosViewController.swift */; };
 		65A50DBF204A3CB8002CE927 /* MinhaContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */; };
 		65A50DC1204A5233002CE927 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DC0204A5233002CE927 /* PageViewController.swift */; };
 		65A50DC7204A7C20002CE927 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */; };
@@ -37,6 +38,7 @@
 		652DE2802037F9ED00ECB5A3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		65387DB720384B8100624070 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		6548E388203A2E0A00924554 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		658EA569204C8C3400BF0D7E /* MeusProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusProdutosViewController.swift; sourceTree = "<group>"; };
 		65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaContaViewController.swift; sourceTree = "<group>"; };
 		65A50DC0204A5233002CE927 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */,
 				65A50DC0204A5233002CE927 /* PageViewController.swift */,
 				65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */,
+				658EA569204C8C3400BF0D7E /* MeusProdutosViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				65C32E9C2044FB17006BEB9E /* CreditsViewController.swift in Sources */,
 				6548E389203A2E0A00924554 /* Client.swift in Sources */,
 				65AA34822048FE8B0042F19D /* Message.swift in Sources */,
+				658EA56A204C8C3400BF0D7E /* MeusProdutosViewController.swift in Sources */,
 				65ACEFD52037186300D41560 /* ViewController.swift in Sources */,
 				65ACEFD32037186300D41560 /* AppDelegate.swift in Sources */,
 				65AA347C2048F0490042F19D /* ChatViewController.swift in Sources */,
