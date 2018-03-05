@@ -33,7 +33,9 @@ class ProdutosViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.hidesBackButton = true
         
-        messageLabel.text = "\(newClient.nome), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessar :)"
+        var temp = newClient.nome.components(separatedBy: " ")
+        let userName = temp.removeFirst()
+        messageLabel.text = "\(userName), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessar :)\nDica: Deslize para ver mais informações"
         
         loadProdutos()
         
@@ -159,9 +161,20 @@ class ProdutosViewController: UITableViewController {
                 writeBD()
             }
             else{
-                self.performSegue(withIdentifier: "goToRegisterView", sender: self)
+                showAlert()
             }
         }
+    }
+    
+    func showAlert(){
+        
+        let alert = UIAlertController(title: "Faça seu cadastro", message: "Para salvar seus produtos selecionados e falar com nossos corretores", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default, handler: { (UIAlertAction) in
+            self.performSegue(withIdentifier: "goToRegisterView", sender: self)
+        })
+        
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
     }
     
     func writeBD(){
