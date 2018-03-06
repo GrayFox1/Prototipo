@@ -11,7 +11,8 @@ import Foundation
 class Client {
     
     var nome : String = ""
-    var idade : Int = -1
+    var genero : String = ""
+    var dataNasc : String = ""
     var praticaEsporte : String = ""
     var fumante : String = ""
     var produtosSelected = [String]()

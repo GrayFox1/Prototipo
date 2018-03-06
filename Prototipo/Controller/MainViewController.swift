@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     var updateCounter = 0
     var timer : Timer?
 
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var infoImage: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var nameLabel: UILabel!
@@ -35,6 +37,13 @@ class MainViewController: UIViewController {
         var temp = newClient?.nome.components(separatedBy: " ")
         let userName = temp?.removeFirst() ?? "Falha na rede"
         nameLabel.text = userName
+        
+        if(newClient?.genero == "Feminino"){
+            welcomeLabel.text = "Seja bem-vinda!😃"
+        }
+        else{
+            welcomeLabel.text = "Seja bem-vindo!😃"
+        }
         
         guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}
         navBar.setBackgroundImage(UIImage(), for: .default)

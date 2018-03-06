@@ -89,12 +89,15 @@ class RegisterViewController: UIViewController {
             let destinationNVC = destinationBVC.viewControllers![0] as! UINavigationController
             let destinationVC = destinationNVC.topViewController as! MainViewController
             destinationVC.newClient = self.newClient
+            
+            let destinationVC2 = destinationBVC.viewControllers![1] as! MinhaContaViewController
+            destinationVC2.newClient = self.newClient
         }
     }
     
     func writeBD(){
         let ref = Database.database().reference().child("Clientes")
-        let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient?.nome, "Idade" : newClient?.idade.description , "PraticaEsporte" : newClient?.praticaEsporte , "Fumante" : newClient?.fumante]
+        let clientData = ["Email" : Auth.auth().currentUser?.email, "Nome" : newClient?.nome, "Gênero" : newClient?.genero, "Data Nascimento" : newClient?.dataNasc, "PraticaEsporte" : newClient?.praticaEsporte , "Fumante" : newClient?.fumante]
         
         SVProgressHUD.show()
         let userID = Auth.auth().currentUser?.uid

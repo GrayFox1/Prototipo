@@ -28,7 +28,7 @@ class ProdutosViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         tableView.rowHeight = 80.0
         self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.hidesBackButton = true
@@ -147,8 +147,11 @@ class ProdutosViewController: UITableViewController {
         else if(segue.identifier == "goToTabView"){
             let destinationBVC = segue.destination as! UITabBarController
             let destinationNVC = destinationBVC.viewControllers![0] as! UINavigationController
-            let destinationVC = destinationNVC.topViewController as! MainViewController
-            destinationVC.newClient = self.newClient
+            let destinationVC3 = destinationNVC.topViewController as! MainViewController
+            destinationVC3.newClient = self.newClient
+            
+            let destinationVC4 = destinationBVC.viewControllers![1] as! MinhaContaViewController
+            destinationVC4.newClient = self.newClient
         }
     }
     

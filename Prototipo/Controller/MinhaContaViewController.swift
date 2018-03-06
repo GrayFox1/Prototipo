@@ -10,10 +10,21 @@ import UIKit
 import Firebase
 
 class MinhaContaViewController: UIViewController {
+    
+    var newClient : Client?
 
+    
+    @IBOutlet weak var dadosLabel: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let dados = newClient{
+            dadosLabel.text = "Nome: \(dados.nome)\nGênero: \(dados.genero)\nData Nascimento: \(dados.dataNasc) "
+        }
     }
 
     

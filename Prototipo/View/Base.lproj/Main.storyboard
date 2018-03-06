@@ -145,7 +145,7 @@
                                 <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caR-7Q-v2a">
-                                <rect key="frame" x="219" y="348" width="51" height="36"/>
+                                <rect key="frame" x="219" y="348" width="98" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Não" backgroundImage="botao1">
@@ -156,7 +156,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-qY-xM6">
-                                <rect key="frame" x="91" y="348" width="53" height="36"/>
+                                <rect key="frame" x="76" y="348" width="95" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Sim" backgroundImage="botao1">
@@ -173,6 +173,42 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbl-or-AJq">
+                                <rect key="frame" x="0.0" y="335" width="375" height="111"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="-638241706.9720459">
+                                    <!--1980-10-10 22:38:13 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="560865600">
+                                    <!--2018-10-10 12:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="pt_BR"/>
+                            </datePicker>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6h-hL-RGS">
+                                <rect key="frame" x="57" y="348" width="110" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Masculino" backgroundImage="botao1">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonClicked:" destination="8k9-Lp-fg3" eventType="touchUpInside" id="v3k-eD-SOA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOH-VP-HFf">
+                                <rect key="frame" x="207" y="348" width="110" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Feminino" backgroundImage="botao1">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonClicked:" destination="8k9-Lp-fg3" eventType="touchUpInside" id="yce-My-phO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W3f-TG-pE7"/>
@@ -181,6 +217,9 @@
                         <outlet property="answerTextInput" destination="5Hj-Fd-aNx" id="Z22-Kl-iyK"/>
                         <outlet property="button1" destination="wpT-qY-xM6" id="JPe-Wt-0aq"/>
                         <outlet property="button2" destination="caR-7Q-v2a" id="TpW-mK-uFn"/>
+                        <outlet property="buttonF" destination="KOH-VP-HFf" id="tWk-XU-HUL"/>
+                        <outlet property="buttonM" destination="D6h-hL-RGS" id="Zng-n6-Oc7"/>
+                        <outlet property="datePicker" destination="zbl-or-AJq" id="7p5-Hb-JPN"/>
                         <outlet property="progressBar" destination="iFf-CT-uUs" id="zUB-hN-tZ3"/>
                         <outlet property="questionLabel" destination="pxf-an-BBb" id="myA-aP-LDB"/>
                         <outlet property="sendButton" destination="eYi-HP-IOm" id="oGw-Da-j1w"/>
@@ -190,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Z-Tx-1G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="967"/>
+            <point key="canvasLocation" x="2293.5999999999999" y="966.56671664167925"/>
         </scene>
         <!--Segureasy-->
         <scene sceneID="7fd-TD-PcV">
@@ -205,7 +244,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <string key="text">UserName, organizamos produtos personalizados para você! 😉 
-Selecione os produtos que te interessar :)
+Selecione os produtos que te interessam :)
 Dica: Deslize para ver mais informações.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -584,6 +623,7 @@ Dica: Deslize para ver mais informações.</string>
                         <outlet property="infoImage" destination="kjz-vn-l9y" id="abr-nV-jdb"/>
                         <outlet property="nameLabel" destination="lza-bR-etn" id="9ac-zc-Sh4"/>
                         <outlet property="pageControl" destination="zSK-BN-Jf3" id="bJy-SB-2Ph"/>
+                        <outlet property="welcomeLabel" destination="HNR-FI-xJ1" id="GYd-np-wR9"/>
                         <segue destination="a25-mz-jZt" kind="show" identifier="goToMeusProdutosView" id="fbX-Yp-Dva"/>
                     </connections>
                 </viewController>
@@ -862,6 +902,7 @@ Número da apólise:</string>
                     <navigationItem key="navigationItem" id="C0n-WW-Wcf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dadosLabel" destination="KKZ-24-EGq" id="lmf-Ow-7q3"/>
                         <segue destination="Jc9-gG-2Md" kind="presentation" identifier="goToIntroView" id="2sY-Xn-DQT"/>
                     </connections>
                 </viewController>

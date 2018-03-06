@@ -64,9 +64,10 @@ class LoginViewController: UIViewController {
             let data = snapshot.value as? NSDictionary
             
             self.newClient.nome = data?["Nome"] as! String
+            self.newClient.genero = data?["Gênero"] as! String
             self.newClient.fumante = data?["Fumante"] as! String
             self.newClient.praticaEsporte = data?["PraticaEsporte"] as! String
-            self.newClient.idade = Int(data?["Idade"] as! String)!
+            self.newClient.dataNasc = data?["Data Nascimento"] as! String
             if(data?["Produtos Selecionados"] != nil){
                 let temp = NSMutableArray(array: (data?["Produtos Selecionados"] as! [String]))
                 self.newClient.produtosSelected = temp as! [String]
@@ -84,6 +85,9 @@ class LoginViewController: UIViewController {
             let destinationNVC = destinationBVC.viewControllers![0] as! UINavigationController
             let destinationVC = destinationNVC.topViewController as! MainViewController
             destinationVC.newClient = self.newClient
+            
+            let destinationVC2 = destinationBVC.viewControllers![1] as! MinhaContaViewController
+            destinationVC2.newClient = self.newClient
         }
     }
     
