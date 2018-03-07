@@ -39,10 +39,10 @@ class MainViewController: UIViewController {
         nameLabel.text = userName
         
         if(newClient?.genero == "Feminino"){
-            welcomeLabel.text = "Seja bem-vinda!😃"
+            welcomeLabel.text = "Seja bem-vinda! :)"
         }
         else{
-            welcomeLabel.text = "Seja bem-vindo!😃"
+            welcomeLabel.text = "Seja bem-vindo! :)"
         }
         
         guard let navBar = navigationController?.navigationBar else {fatalError("Navigation Controller não existe")}

@@ -16,7 +16,7 @@ import SVProgressHUD
 class ProdutosViewController: UITableViewController {
     
     let realm = try! Realm()
-    let produtosArray = ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E", "Produto F"]
+    let produtosArray = ["DIT", "Doenças Graves", "Vida Inteira", "Vida Inteira Resgatável", "Vida Premiada", "Prazo Certo"]
     var newClient = Client()
     var produtos : Results<Produto>?
     var productIndex = -1
@@ -35,7 +35,7 @@ class ProdutosViewController: UITableViewController {
         
         var temp = newClient.nome.components(separatedBy: " ")
         let userName = temp.removeFirst()
-        messageLabel.text = "\(userName), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessar :)\nDica: Deslize para ver mais informações"
+        messageLabel.text = "\(userName), organizamos produtos personalizados para você!\nSelecione os produtos que te interessam :)\nDica: Deslize para ver mais informações."
         
         loadProdutos()
         
@@ -43,22 +43,22 @@ class ProdutosViewController: UITableViewController {
             do{
                 try realm.write {
                     let newProduto = Produto()
-                    newProduto.title = "Produto A"
+                    newProduto.title = "DIT"
                     realm.add(newProduto)
                     let newProduto2 = Produto()
-                    newProduto2.title = "Produto B"
+                    newProduto2.title = "Doenças Graves"
                     realm.add(newProduto2)
                     let newProduto3 = Produto()
-                    newProduto3.title = "Produto C"
+                    newProduto3.title = "Vida Inteira"
                     realm.add(newProduto3)
                     let newProduto4 = Produto()
-                    newProduto4.title = "Produto D"
+                    newProduto4.title = "Vida Inteira Resgatável"
                     realm.add(newProduto4)
                     let newProduto5 = Produto()
-                    newProduto5.title = "Produto E"
+                    newProduto5.title = "Vida Premiada"
                     realm.add(newProduto5)
                     let newProduto6 = Produto()
-                    newProduto6.title = "Produto F"
+                    newProduto6.title = "Prazo Certo"
                     realm.add(newProduto6)
                     tableView.reloadData()
                 }
@@ -213,7 +213,7 @@ extension ProdutosViewController : SwipeTableViewCellDelegate {
             
         }
         productIndex = indexPath.row
-        infoAction.image = UIImage(named: "info2")
+        infoAction.image = UIImage(named: "pontinhos")
         
         return [infoAction]
     }
