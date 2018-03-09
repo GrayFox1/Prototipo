@@ -35,7 +35,7 @@ class ProdutosViewController: UITableViewController {
         
         var temp = newClient.nome.components(separatedBy: " ")
         let userName = temp.removeFirst()
-        messageLabel.text = "\(userName), organizamos produtos personalizados para você!\nSelecione os produtos que te interessam :)\nDica: Deslize para ver mais informações."
+        messageLabel.text = "\(userName), organizamos produtos personalizados para você! 😉\nSelecione os produtos que te interessam :)\nDica: Deslize para ver mais informações."
         
         loadProdutos()
         

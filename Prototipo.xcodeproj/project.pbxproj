@@ -31,6 +31,7 @@
 		65E299DF2047BDC10091D5B6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E299DE2047BDC10091D5B6 /* InfoViewController.swift */; };
 		65EB0E0220385476004E6B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65EB0E0120385476004E6B54 /* GoogleService-Info.plist */; };
 		65EBE62E203DA931005F9844 /* ProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBE62D203DA931005F9844 /* ProdutosViewController.swift */; };
+		65FCB4452050803B00FCFB42 /* DepoimentosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCB4442050803B00FCFB42 /* DepoimentosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		65E299DE2047BDC10091D5B6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		65EB0E0120385476004E6B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65EBE62D203DA931005F9844 /* ProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosViewController.swift; sourceTree = "<group>"; };
+		65FCB4442050803B00FCFB42 /* DepoimentosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepoimentosViewController.swift; sourceTree = "<group>"; };
 		6AACBEF4F24DAEC6D37BB08D /* Pods_Prototipo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prototipo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81751B2C69561381162CB5C0 /* Pods-Prototipo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prototipo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prototipo/Pods-Prototipo.debug.xcconfig"; sourceTree = "<group>"; };
 		9EA44FF4B50882EF64F48516 /* Pods-Prototipo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prototipo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prototipo/Pods-Prototipo.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				65A50DC0204A5233002CE927 /* PageViewController.swift */,
 				65A50DC6204A7C20002CE927 /* CustomTabBarViewController.swift */,
 				658EA569204C8C3400BF0D7E /* MeusProdutosViewController.swift */,
+				65FCB4442050803B00FCFB42 /* DepoimentosViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				652DE27F2037F7A700ECB5A3 /* LoginViewController.swift in Sources */,
 				65A50DC7204A7C20002CE927 /* CustomTabBarViewController.swift in Sources */,
 				65C32E9E20451E56006BEB9E /* Produto.swift in Sources */,
+				65FCB4452050803B00FCFB42 /* DepoimentosViewController.swift in Sources */,
 				65A50DBF204A3CB8002CE927 /* MinhaContaViewController.swift in Sources */,
 				65387DB820384B8100624070 /* QuestionsViewController.swift in Sources */,
 				65E299DF2047BDC10091D5B6 /* InfoViewController.swift in Sources */,
