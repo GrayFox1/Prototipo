@@ -15,8 +15,9 @@ class QuestionsViewController: UIViewController {
     var questionNum : Int = 0
     let questionsArray : [String] = ["Qual é o seu nome?", "Gênero?", "Qual é sua data de nascimento?", "Você pratica esportes?", "Você fuma?"]
     let newClient = Client()
+    var clientHKData = [String : String]()
     
-    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var buttonF: UIButton!
     @IBOutlet weak var buttonM: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -31,6 +32,10 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        imageView.addGestureRecognizer(tapGesture)
+        
         self.navigationItem.hidesBackButton = true
         datePicker.isHidden = true
         welcomeLabel.isHidden = true
@@ -42,9 +47,14 @@ class QuestionsViewController: UIViewController {
 
     }
     
+    @objc func viewTapped(){ //Remover teclado
+        answerTextInput.endEditing(true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ProdutosViewController
         destinationVC.newClient = self.newClient
+        destinationVC.clientHKData = self.clientHKData
         
     }
     
@@ -81,8 +91,20 @@ class QuestionsViewController: UIViewController {
             else{
                 SVProgressHUD.dismiss()
                 print("New client data saved successfully Part 1!")
-                self.performSegue(withIdentifier: "goToProdutosView", sender: self)
+            }
+            
+        }
         
+        ref.child(userID!).child("Health Data").setValue(clientHKData) {
+            (error, reference) in
+            
+            if(error != nil){
+                print(error!)
+            }
+            else{
+                print("New client data saved successfully Part 1.5!")
+                print(self.clientHKData)
+                self.performSegue(withIdentifier: "goToProdutosView", sender: self)
             }
             
         }

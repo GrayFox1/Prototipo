@@ -55,6 +55,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTextField.endEditing(true)
     }
     
+    
     //MARK:  Métodos Table View Data Source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -13,6 +13,7 @@ import SVProgressHUD
 class RegisterViewController: UIViewController {
     
     var newClient : Client?
+    var clientHKData = [String : String]()
     var errorCode : Int = 0
 
     @IBOutlet weak var emailTextInput: UITextField!
@@ -110,6 +111,18 @@ class RegisterViewController: UIViewController {
             }
             else{
                 print("New client data saved successfully Part 1!")
+            }
+            
+        }
+        
+        ref.child(userID!).child("Health Data").setValue(clientHKData) {
+            (error, reference) in
+            
+            if(error != nil){
+                print(error!)
+            }
+            else{
+                print("New client data saved successfully Part 1.5!")
             }
             
         }

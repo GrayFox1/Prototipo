@@ -12,6 +12,7 @@
 		652DE2812037F9ED00ECB5A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DE2802037F9ED00ECB5A3 /* RegisterViewController.swift */; };
 		65387DB820384B8100624070 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65387DB720384B8100624070 /* QuestionsViewController.swift */; };
 		6548E389203A2E0A00924554 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548E388203A2E0A00924554 /* Client.swift */; };
+		656F81A2205347DE00E8626C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 656F81A1205347DE00E8626C /* HealthKit.framework */; };
 		658EA56A204C8C3400BF0D7E /* MeusProdutosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658EA569204C8C3400BF0D7E /* MeusProdutosViewController.swift */; };
 		65A50DBF204A3CB8002CE927 /* MinhaContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */; };
 		65A50DC1204A5233002CE927 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A50DC0204A5233002CE927 /* PageViewController.swift */; };
@@ -39,6 +40,8 @@
 		652DE2802037F9ED00ECB5A3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		65387DB720384B8100624070 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		6548E388203A2E0A00924554 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		656F81A0205347DE00E8626C /* Prototipo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prototipo.entitlements; sourceTree = "<group>"; };
+		656F81A1205347DE00E8626C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		658EA569204C8C3400BF0D7E /* MeusProdutosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeusProdutosViewController.swift; sourceTree = "<group>"; };
 		65A50DBE204A3CB8002CE927 /* MinhaContaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaContaViewController.swift; sourceTree = "<group>"; };
 		65A50DC0204A5233002CE927 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60FB2A50AE0F15EA3CE7B300 /* Pods_Prototipo.framework in Frameworks */,
+				656F81A2205347DE00E8626C /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +154,7 @@
 		65ACEFD12037186300D41560 /* Prototipo */ = {
 			isa = PBXGroup;
 			children = (
+				656F81A0205347DE00E8626C /* Prototipo.entitlements */,
 				65ACEFD22037186300D41560 /* AppDelegate.swift */,
 				6548E38A203A2E1300924554 /* Model */,
 				65387DBA20384D5A00624070 /* View */,
@@ -163,6 +168,7 @@
 		B4C4D0A2C1CB015134EABBC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				656F81A1205347DE00E8626C /* HealthKit.framework */,
 				6AACBEF4F24DAEC6D37BB08D /* Pods_Prototipo.framework */,
 			);
 			name = Frameworks;
@@ -213,6 +219,11 @@
 					65ACEFCE2037186300D41560 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -480,7 +491,9 @@
 			baseConfigurationReference = 81751B2C69561381162CB5C0 /* Pods-Prototipo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Prototipo/Prototipo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2ASFZZB3G;
 				INFOPLIST_FILE = Prototipo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrePessanha.Prototipo;
@@ -495,7 +508,9 @@
 			baseConfigurationReference = 9EA44FF4B50882EF64F48516 /* Pods-Prototipo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Prototipo/Prototipo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N2ASFZZB3G;
 				INFOPLIST_FILE = Prototipo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndrePessanha.Prototipo;

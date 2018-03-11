@@ -20,7 +20,7 @@ class ProdutosViewController: UITableViewController {
     var newClient = Client()
     var produtos : Results<Produto>?
     var productIndex = -1
-    
+    var clientHKData = [String : String]()
     
     
     @IBOutlet var concluirButton: UIBarButtonItem!
@@ -143,6 +143,7 @@ class ProdutosViewController: UITableViewController {
         else if(segue.identifier == "goToRegisterView"){
             let destinationVC2 = segue.destination as! RegisterViewController
             destinationVC2.newClient = self.newClient
+            destinationVC2.clientHKData = self.clientHKData
         }
         else if(segue.identifier == "goToTabView"){
             let destinationBVC = segue.destination as! UITabBarController
