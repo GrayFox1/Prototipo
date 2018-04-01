@@ -307,7 +307,7 @@ Dica: Deslize para ver mais informações.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hn-GS-X5j">
-                                        <rect key="frame" x="51" y="201" width="240" height="40"/>
+                                        <rect key="frame" x="51" y="214" width="240" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Depoimentos" backgroundImage="botao1">
@@ -316,14 +316,6 @@ Dica: Deslize para ver mais informações.</string>
                                         <connections>
                                             <segue destination="c3q-at-Yox" kind="show" identifier="goToDepoimentosView" id="NW3-BG-2Hn"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhx-P2-D6U">
-                                        <rect key="frame" x="51" y="260" width="240" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Cadastrar" backgroundImage="botao1">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PT-qy-4Ya">
                                         <rect key="frame" x="44" y="24" width="255" height="155"/>
@@ -428,8 +420,7 @@ Dica: Permitir acesso ao Health reduzirá a quantidade de perguntas consideravel
                                     <color key="titleColor" red="0.76454788446426392" green="0.2094191312789917" blue="0.30244749784469604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startQuestions:" destination="obt-wR-8BQ" eventType="touchUpInside" id="7Ld-3u-Z15"/>
-                                    <segue destination="8k9-Lp-fg3" kind="show" identifier="goToQuestionsView" id="SCM-vC-zGy"/>
+                                    <action selector="startQuestions:" destination="obt-wR-8BQ" eventType="touchUpInside" id="KKo-En-jyP"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ex5-vn-srK">
@@ -461,6 +452,7 @@ Dica: Permitir acesso ao Health reduzirá a quantidade de perguntas consideravel
                     </view>
                     <connections>
                         <outlet property="videoDisplay" destination="ex5-vn-srK" id="bnf-eJ-wFk"/>
+                        <segue destination="8k9-Lp-fg3" kind="show" identifier="goToQuestionsView" id="m5s-ck-4U6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AB-mh-aOB" userLabel="First Responder" sceneMemberID="firstResponder"/>

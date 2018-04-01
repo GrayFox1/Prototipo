@@ -40,6 +40,10 @@ class CreditsViewController: UIViewController {
     
     @IBAction func permitirAcessoHealth(_ sender: UIButton) {
         autorizarHealthKit()
+        SVProgressHUD.show()
+        readHKData()
+        readHeightData()
+        readWeightData()
     }
     
     func autorizarHealthKit() {
@@ -141,7 +145,8 @@ class CreditsViewController: UIViewController {
                 return
             }
             let heightInMeters = sample.quantity.doubleValue(for: HKUnit.meter())
-            self.altura = heightInMeters.description
+            self.clientHKData["Altura"] = heightInMeters.description + " m"
+            SVProgressHUD.dismiss()
         }
         
     }
@@ -161,7 +166,7 @@ class CreditsViewController: UIViewController {
                 return
             }
             let weightInKilograms = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
-            self.peso = weightInKilograms.description
+            self.clientHKData["Peso"] = weightInKilograms.description + " KG"
         }
         
     }
@@ -214,16 +219,7 @@ class CreditsViewController: UIViewController {
     }
     
     @IBAction func startQuestions(_ sender: UIButton) {
-        if(acesso){
-            SVProgressHUD.show()
-            readHKData()
-            readHeightData()
-            readWeightData()
-            clientHKData["Peso"] = peso
-            clientHKData["Altura"] = altura
-            print(clientHKData)
-            SVProgressHUD.dismiss()
-        }
+        //print(clientHKData)
         performSegue(withIdentifier: "goToQuestionsView", sender: self)
     }
     
